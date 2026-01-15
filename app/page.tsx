@@ -1,6 +1,14 @@
 'use client';
 import { useState } from 'react';
+// app/page.tsx
+'use client';
+import { useState } from 'react';
 
+// ... весь твой код без изменений ...
+
+export default function Home() {
+  // ...
+}
 export default function Home() {
   const [selectedBook, setSelectedBook] = useState(null);
 
