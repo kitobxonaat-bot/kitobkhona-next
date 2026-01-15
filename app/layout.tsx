@@ -1,12 +1,13 @@
-import { Geist, Geist_Mono } from "next/font/google";
+// app/layout.tsx
+import { GeistSans, GeistMono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
+const geistSans = GeistSans({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const geistMono = GeistMono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -16,12 +17,14 @@ export const metadata = {
   description: "Беҳтарин китобхонаи онлайн бо забони тоҷикӣ. Китобҳоро ройгон бихонед.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;  // ← этот тип обязателен
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="tg">  {/* tg — для тоҷикӣ, или "en" */}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
